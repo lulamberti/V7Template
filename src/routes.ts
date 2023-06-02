@@ -1,20 +1,14 @@
 // This file was added by edgio init.
 // You should commit this file to source control.
-import zlib from 'zlib'
+// import zlib from 'zlib'
+import { load } from 'cheerio'
 import CustomCacheKey from '@edgio/core/router/CustomCacheKey'
 import responseBodyToString from '@edgio/core/utils/responseBodyToString'
-import { Router } from '@edgio/core/router';
-import { injectBrowserScript, starterRoutes } from "@edgio/starter";
-import { edgioRoutes } from '@edgio/core';
-
+import { Router } from '@edgio/core/router'
+import { injectBrowserScript, starterRoutes } from '@edgio/starter'
 
 export default new Router()
-  .match(':path*', {
-  origin: {
-    set_origin: 'origin',
-  },
-  })
-/*  .match(':path*', ({ cache, proxy }) => {
+  .match('/:path*', ({ cache, proxy }) => {
     cache({
       edge: {
         maxAgeSeconds: 60 * 60,
@@ -34,10 +28,10 @@ export default new Router()
             .replace(/https\:\/\/tangoaroma\.com\//g, '/')
             .replace(/https\:\/\/www\.tangoaroma\.com\//g, '/')
         }
-      }
+      },
     })
   })
-  */
+
   // caching stylesheets and scripts
   .match('/:path*/:file.:ext(js|mjs|css)', {
     headers: {
@@ -71,5 +65,4 @@ export default new Router()
       set_origin: 'origin',
     },
   })
-  .use(edgioRoutes)
-  .static('node_modules/@edgio/devtools')
+  .use(starterRoutes)

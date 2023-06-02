@@ -1,7 +1,7 @@
 module.exports = {
   name: "www.tangoaroma.com",
   team: "tangoaroma",
-  routes: './src/routes.js',
+  routes: './src/routes.ts',
   connector: '@edgio/starter',
   origins: [
     {
