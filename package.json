@@ -1,0 +1,22 @@
+{
+  "name": "www.tangoaroma.com",
+  "devDependencies": {
+    "@edgio/cli": "^7.0.15",
+    "@edgio/core": "^7.0.15",
+    "@edgio/devtools": "^7.0.15",
+    "@edgio/prefetch": "^7.0.15",
+    "@edgio/starter": "^7.0.15",
+    "@types/cheerio": "^0.22.31",
+    "@types/node": "^13.13.2",
+    "cheerio": "^1.0.0-rc.12",
+    "prettier": "^2.8.8",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "edgio dev",
+    "build": "edgio build",
+    "deploy": "edg deploy",
+    "production": "edg run -p",
+    "fmt": "prettier --write '**/*' --ignore-unknown"
+  }
+}
